@@ -1,0 +1,6 @@
+*.log
+*.box
+.vagrant/
+
+cluster_k8s_configs
+tmp
