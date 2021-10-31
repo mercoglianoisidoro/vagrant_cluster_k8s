@@ -27,7 +27,6 @@ kubeadm init --apiserver-advertise-address=192.168.1.180 --pod-network-cidr=10.2
 
 # store join command to be accessed by nodes
 echo "store join command to be accessed by nodes"
-rm -r /vagrant/tmp/
 mkdir -p /vagrant/tmp/
 kubeadm token create --print-join-command --ttl 0 > /vagrant/tmp/master-join-command.sh
 

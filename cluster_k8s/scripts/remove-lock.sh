@@ -1,10 +1,9 @@
 #!/bin/sh
 
 
-echo "checking apt and dpkg processes"
+echo "checking apt and dpkg processes, this can take some time"
 
-
-
+# this is needed by a problem in the image
 while pgrep apt > /dev/null; do  echo "waiting for apt to finish" && sleep 10; done
 while pgrep apt-get > /dev/null;do  echo "waiting for apt-get to finish" && sleep 10; done
 while pgrep dpkg > /dev/null; do  echo "waiting for dpkg to finish" && sleep 10; done
@@ -31,7 +30,7 @@ rm /var/lib/apt/lists/lock
 
 # -exec rm -R {} \;
 
-echo "isidoro"
+echo "apt lists"
 ls -la /var/lib/apt/lists/
 
 echo "apt update"
