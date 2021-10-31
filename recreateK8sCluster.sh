@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-# vagrant box update
 
 cd cluster_k8s_baseImage
 vagrant destroy -f
+vagrant box update
 rm cluster_k8s_baseImage.box
 vagrant up
-sleep 300
+vagrant halt
 vagrant package --output cluster_k8s_baseImage.box
 vagrant destroy -f
 cd ..
