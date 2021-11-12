@@ -2,10 +2,10 @@
 
 The project let you to create a kubernetes cluster with vagrant, on your local machine.
 
-Currently, I tested just only virtual box as provider for vagrant.
+Currently, I tested only virtual box as provider for vagrant.
 
 ## Motivation
-Whan I started learning kubernetes, I wanted to install it from scratch, manage it and face all the problem coming from installation and maintenance. So, I started using vagrant.
+Whan I started learning kubernetes, I wanted to install it from scratch, manage it and face all the problems coming from installation and maintenance: Vagrant was my friend!
 Today, this repository is still useful in some circumstances.
 
 
