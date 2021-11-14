@@ -12,7 +12,7 @@ vagrant ssh vagrantclusterk8s-master -c "sudo -i systemctl daemon-reload && sudo
 vagrant ssh vagrantclusterk8s-master -c "kubectl get all --all-namespaces"
 
 
-# KUBECONFIG=~/.kube/config:$(dirname $(pwd))/cluster_k8s/cluster_k8s_configs/kubeconfig_admin
+KUBECONFIG=~/.kube/config:$(dirname $(pwd))/cluster_k8s/cluster_k8s_configs/kubeconfig_admin
 echo "export KUBECONFIG=$KUBECONFIG" > kubectl_config.sh
 echo "--------------------------------------------------------------"
 echo "configuration to be set to connect to the server"
