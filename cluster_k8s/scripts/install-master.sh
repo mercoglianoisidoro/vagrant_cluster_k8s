@@ -17,8 +17,11 @@ echo "install etcd-client"
 apt-get update
 apt-get install -y etcd-client
 
+
 echo "kubeadm reset"
 kubeadm reset -f
+rm /etc/containerd/config.toml
+systemctl restart containerd
 echo "kubeadm init"
 kubeadm init --apiserver-advertise-address=192.168.1.180 --pod-network-cidr=10.217.0.0/16
 
@@ -88,9 +91,8 @@ kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl versio
 
 
 #metric server
-#kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/download/v0.3.6/components.yaml
-kubectl apply -f /vagrant/scripts/metric-server-edited.yaml
 
+kubectl apply -f /vagrant/scripts/metric-server-v0.5.0_edited.yaml
 
 #dashboard
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended.yaml
